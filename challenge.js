@@ -24,3 +24,19 @@ console.log(array1.last());
 
 const array2 = [];
 console.log(array2.last());
+
+
+// 3.Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
+let arrayItems = ["Ali", "Mary", "Mohadese", "zahra"];
+
+function counter(n) {
+  let numbers = [];
+  for (let arrayItem of arrayItems) {
+    if (arrayItem) {
+      let plusN = n++;
+      numbers.push(plusN);
+    }
+  }
+  return numbers;
+}
+console.log(counter(10));
