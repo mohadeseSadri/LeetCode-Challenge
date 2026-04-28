@@ -61,12 +61,53 @@ console.log(reduce([1, 2, 3, 4], (i, n) => i + n, 0));
 // Please solve it without the built-in Array.filter method.
 
 function filter(arrNums, fn) {
-  let filteredArr = []
+  let filteredArr = [];
   for (let arr of arrNums) {
-    if(fn(arr)){
-        filteredArr.push(arr);
+    if (fn(arr)) {
+      filteredArr.push(arr);
     }
   }
   return filteredArr;
 }
 console.log(filter([1, 2, 3, 4], (num) => num > 2));
+
+// 6.Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+// The returned array should be created such that returnedArray[i] = fn(arr[i], i).
+// Please solve it without the built-in Array.map method.
+
+function map(arr, fn) {
+  let newArr = [];
+  let i = 1;
+  for (let element of arr) {
+    newArr.push(fn(element, i));
+  }
+  return newArr;
+}
+console.log(map([1, 2, 3, 4], (e, i) => e + i));
+
+
+
+function map2(arr, fn) {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newArr[i] = fn(arr[i], i);
+  }
+
+  return newArr;
+}
+console.log(map2([1, 2, 3, 4], (e, i) => e + i));
+
+
+
+function map3(arr, fn) {
+  let newArr = [];
+
+  for (let element of arr) {
+    if (element) {
+      newArr.push(fn);
+    }
+  }
+  return newArr;
+}
+console.log(map3([1, 2, 3, 4], 45));
