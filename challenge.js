@@ -111,3 +111,49 @@ function map3(arr, fn) {
   return newArr;
 }
 console.log(map3([1, 2, 3, 4], 45));
+
+/*Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+The three functions are:
+increment() increases the current value by 1 and then returns it.
+decrement() reduces the current value by 1 and then returns it.
+reset() sets the current value to init and then returns it. */
+
+function createCounter(number) {
+  let resultObj = number;
+  function increment() {
+    return ++resultObj;
+  }
+
+  function reset() {
+    return (resultObj = number);
+  }
+
+  function decrement() {
+    return --resultObj;
+  }
+
+  return { increment, reset, decrement };
+}
+
+let counterNum = createCounter(5);
+let obj = {
+  increament: counterNum.increment(),
+  reset: counterNum.reset(),
+  descrement: counterNum.decrement(),
+};
+console.log(obj);
+
+/* Given an array arr and a chunk size size, return a chunked array.
+A chunked array contains the original elements in arr, but consists of subarrays each of length size. The length of the last subarray may be less than size if arr.length is not evenly divisible by size.
+Please solve it without using lodash's _.chunk function. */
+
+function chunk(array, size) {
+  let chunkResult = [];
+  for (let i = 0; i < array.length; i += size) {
+    let arraySlice = array.slice(i, i + size);
+    chunkResult.push(arraySlice);
+  }
+  return chunkResult;
+}
+
+console.log(chunk([1, 2, 3, 4, 5, 6], 2));
