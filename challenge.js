@@ -157,3 +157,18 @@ function chunk(array, size) {
 }
 
 console.log(chunk([1, 2, 3, 4, 5, 6], 2));
+
+
+/* Given an object or an array, return if it is empty.
+
+An empty object contains no key-value pairs.
+An empty array contains no elements.
+You may assume the object or array is the output of JSON.parse. */
+
+const isEmpty = function(obj) {
+    if(JSON.stringify(obj).length <= 2) return true
+    else return false
+};
+
+const person = {x: 5, y: 42};
+console.log(isEmpty(person));
